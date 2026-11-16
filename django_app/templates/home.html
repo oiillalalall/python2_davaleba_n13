@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %}BOOKLY | Discover Your Next Story{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">
+            <span class="dot"></span>
+            YOUR NEXT CHAPTER STARTS HERE
+        </div>
+
+        <h1>
+            Stories that<br>
+            <span>stay with you.</span>
+        </h1>
+
+        <p>
+            Welcome to BOOKLY, your personal destination
+            for discovering incredible books. From timeless
+            classics to modern masterpieces, find your next
+            favorite story right here.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'products' %}" class="primary-button">
+                Explore Books <span>↗</span>
+            </a>
+
+            <a href="#about" class="secondary-button">
+                Learn More ↓
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <h3>01</h3>
+                <p>Discover</p>
+            </div>
+            <div>
+                <h3>02</h3>
+                <p>Explore</p>
+            </div>
+            <div>
+                <h3>03</h3>
+                <p>Enjoy</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="floating-label">A WORLD OF STORIES</div>
+
+        <div class="book-showcase">
+            <div class="book-cover">
+                <span>BOOKLY<br>EDITION</span>
+                <h2>The Art<br>of Reading</h2>
+                <div class="cover-line"></div>
+                <small>EVERY PAGE IS A NEW JOURNEY</small>
+            </div>
+        </div>
+
+        <div class="visual-caption">
+            <span>✦</span> FIND YOUR NEXT FAVORITE
+        </div>
+    </div>
+</section>
+
+
+<section class="about-section" id="about">
+    <div class="section-tag">✳ ABOUT BOOKLY</div>
+
+    <h2>More than just books.<br>
+        <span>A whole new world.</span>
+    </h2>
+
+    <p>
+        At BOOKLY, we believe every book has the power
+        to inspire, educate and change the way we see
+        the world. Our mission is to make discovering
+        great literature simple and enjoyable.
+    </p>
+
+    <a href="{% url 'products' %}" class="text-link">
+        Browse our collection ↗
+    </a>
+</section>
+
+
+<section class="home-cta">
+    <div>
+        <span class="section-tag">YOUR NEXT ADVENTURE</span>
+        <h2>Ready to turn<br>the next page?</h2>
+    </div>
+
+    <a href="{% url 'products' %}" class="primary-button">
+        View All Books ↗
+    </a>
+</section>
+
+{% endblock %}
+

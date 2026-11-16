@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}BOOKLY | Our Collection{% endblock %}
+
+{% block content %}
+
+<section class="page-heading">
+    <div class="section-tag">✳ THE COLLECTION</div>
+
+    <h1>Find your next <span>favorite.</span></h1>
+
+    <p>Explore our collection of carefully selected books.</p>
+</section>
+
+<section class="products-section">
+
+    <div class="products-top">
+        <h3>All Books</h3>
+        <span>{{ products|length }} books available</span>
+    </div>
+
+    <div class="product-grid">
+
+        {% for book in products %}
+
+        <a href="{% url 'product' book.id %}" class="product-card">
+
+            <div class="product-image">
+                <div class="mini-book">
+                    <span>BOOKLY COLLECTION</span>
+                    <h2>{{ book.title }}</h2>
+                    <div class="mini-line"></div>
+                </div>
+
+                {% if book.is_available %}
+                    <span class="availability available">Available</span>
+                {% else %}
+                    <span class="availability unavailable">Sold Out</span>
+                {% endif %}
+            </div>
+
+            <div class="product-info">
+                <div>
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author.first_name }} {{ book.author.last_name }}</p>
+                </div>
+
+                <div class="product-bottom">
+                    <span class="price">${{ book.price }}</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+            </div>
+
+        </a>
+
+        {% empty %}
+
+        <div class="empty-state">
+            <h2>No books yet.</h2>
+            <p>Check back later for our latest collection!</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

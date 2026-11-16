@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.title }} | BOOKLY{% endblock %}
+
+{% block content %}
+
+<section class="detail-section">
+
+    <a href="{% url 'products' %}" class="back-link">
+        ← Back to collection
+    </a>
+
+    <div class="detail-container">
+
+        <div class="detail-image">
+            <div class="detail-book">
+                <span>BOOKLY COLLECTION</span>
+                <h1>{{ product.title }}</h1>
+                <div class="detail-line"></div>
+                <small>A STORY WORTH READING</small>
+            </div>
+        </div>
+
+        <div class="detail-info">
+
+            <div class="section-tag">✳ BOOK DETAILS</div>
+
+            <h1>{{ product.title }}</h1>
+
+            <p class="detail-author">
+                Written by
+                <strong>
+                    {{ product.author.first_name }}
+                    {{ product.author.last_name }}
+                </strong>
+            </p>
+
+            <div class="detail-price">
+                ${{ product.price }}
+            </div>
+
+            <div class="detail-divider"></div>
+
+            <h3>About the Author</h3>
+
+            <p class="detail-description">
+                {{ product.author.bio }}
+            </p>
+
+            <div class="detail-divider"></div>
+
+            <div class="detail-row">
+                <span>Published date</span>
+                <strong>{{ product.published_date }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>ISBN</span>
+                <strong>{{ product.isbn }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Availability</span>
+
+                {% if product.is_available %}
+                    <strong class="green-text">In Stock</strong>
+                {% else %}
+                    <strong class="red-text">Out of Stock</strong>
+                {% endif %}
+            </div>
+
+            <a href="{% url 'products' %}" class="primary-button detail-button">
+                Explore More Books ↗
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

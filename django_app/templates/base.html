@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BOOKLY{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="{% url 'home' %}" class="logo">
+        BOOK<span>LY.</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'products' %}">Books</a>
+    </div>
+
+    <a href="{% url 'products' %}" class="nav-button">
+        Explore Books <span>↗</span>
+    </a>
+</nav>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <div class="footer-content">
+        <a href="{% url 'home' %}" class="logo">
+            BOOK<span>LY.</span>
+        </a>
+        <p>Discover stories. Find inspiration.</p>
+        <p class="copyright">© 2026 BOOKLY. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
